@@ -196,7 +196,7 @@ function specialKeyUsed(e) {
 /**
  * Parse `gallery` or `children` options.
  *
- * @param {HTMLElement | NodeListOf<HTMLElement> | string} option
+ * @param {import('../photoswipe.js').ElementProvider} option
  * @param {string=} legacySelector
  * @param {HTMLElement | Document} [parent]
  * @returns HTMLElement[]
@@ -5655,6 +5655,10 @@ class Opener {
 /** @typedef {PhotoSwipeModule | Promise<PhotoSwipeModule> | (() => Promise<PhotoSwipeModule>)} PhotoSwipeModuleOption */
 
 /**
+ * @typedef {string | NodeListOf<HTMLElement> | HTMLElement[] | HTMLElement} ElementProvider
+ */
+
+/**
  * @typedef {Object} PhotoSwipeOptions https://photoswipe.com/options/
  *
  * @prop {DataSource=} dataSource
@@ -5811,9 +5815,9 @@ class Opener {
  * @prop {PhotoSwipeModuleOption} [pswpModule]
  * @prop {() => Promise<any>} [openPromise]
  * @prop {boolean=} preloadFirstSlide
- * @prop {string=} gallery
+ * @prop {ElementProvider=} gallery
  * @prop {string=} gallerySelector
- * @prop {string=} children
+ * @prop {ElementProvider=} children
  * @prop {string=} childSelector
  * @prop {string | false} [thumbSelector]
  */
